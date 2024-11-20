@@ -25,6 +25,8 @@ services:
     ipc: host
     tty: true
     stdin_open: true
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=1
     command: bash
     deploy:
       resources:
