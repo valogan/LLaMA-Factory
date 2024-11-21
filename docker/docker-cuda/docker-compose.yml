@@ -20,6 +20,8 @@ services:
       - ../../data:/app/data
       - ../../output:/app/output
       - /mnt/scratch/vlogan/models:/models
+      - /mnt/scratch/vlogan/output_models:/app/models
+      - /mnt/scratch/vlogan/intermediate:/app/saves
     ipc: host
     tty: true
     stdin_open: true
