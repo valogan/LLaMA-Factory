@@ -19,9 +19,7 @@ services:
       - ../../om_cache:/root/.cache/openmind
       - ../../data:/app/data
       - ../../output:/app/output
-    ports:
-      - "7860:7860"
-      - "8000:8000"
+      - /mnt/scratch/vlogan/models:/models
     ipc: host
     tty: true
     stdin_open: true
