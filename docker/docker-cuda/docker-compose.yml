@@ -2,7 +2,7 @@ services:
   llamafactory:
     build:
       dockerfile: ./docker/docker-cuda/Dockerfile
-      context: ../..
+      context: ../.. 
       args:
         INSTALL_BNB: false
         INSTALL_VLLM: false
@@ -25,14 +25,12 @@ services:
     ipc: host
     tty: true
     stdin_open: true
-    environment:
-      - NVIDIA_VISIBLE_DEVICES=1
     command: bash
     deploy:
       resources:
         reservations:
           devices:
           - driver: nvidia
-            count: "all"
+            device_ids: ['1']
             capabilities: [gpu]
     restart: unless-stopped
